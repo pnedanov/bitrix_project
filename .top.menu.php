@@ -13,6 +13,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Добавление статьи", 
+		"/articleadd/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>
