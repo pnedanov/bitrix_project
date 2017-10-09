@@ -16,7 +16,6 @@ if (!empty($_REQUEST['name']) and !empty($_REQUEST['description'])) {
     echo '<pre>';
 */
 
-    //Погнали
     $elem = new CIBlockElement;
     $iblock_id = 1;
     //$section_id = false;
@@ -60,8 +59,7 @@ if (!empty($_REQUEST['name']) and !empty($_REQUEST['description'])) {
     } else {
         echo 'Произошел как-то косяк Попробуйте еще разок';
 		echo "Error: ".$elem->LAST_ERROR;
-    }
-}
+    }}
 ?>
    
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

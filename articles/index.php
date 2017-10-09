@@ -1,7 +1,12 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Статьи");
-?><?$APPLICATION->IncludeComponent(
+?>
+<section class="wrapper style1">
+					<div class="container">
+						<div id="content">
+						<article>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:breadcrumb", 
 	".default", 
 	array(
@@ -13,7 +18,7 @@ $APPLICATION->SetTitle("Статьи");
 	false
 );?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
-	".default", 
+	"sort", 
 	array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -25,10 +30,10 @@ $APPLICATION->SetTitle("Статьи");
 		"BROWSER_TITLE" => "-",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
+		"CACHE_TIME" => "0",
 		"CACHE_TYPE" => "N",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "sort",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
@@ -81,18 +86,27 @@ $APPLICATION->SetTitle("Статьи");
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
+		"SORT_BY1" => "",
+		"SORT_BY2" => "",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
+		"FILTER_NAME" => "",
+		"FILTER_FIELD_CODE" => array(
+			0 => "DATE_ACTIVE_FROM",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
@@ -103,4 +117,9 @@ $APPLICATION->SetTitle("Статьи");
 	array(
 		"ACTIVE_COMPONENT" => "Y"
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+		</article>
+		</div>
+	</div>
+</section>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
